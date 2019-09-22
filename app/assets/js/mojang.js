@@ -135,7 +135,7 @@ exports.authenticate = function(username, password, clientToken, requestUser = t
     return new Promise((resolve, reject) => {
         resolve({
             "accessToken": "aaaa",      // hexadecimal
-            "clientToken": "cccc",        // identical to the one received
+            "clientToken": "ccccd",        // identical to the one received
             "availableProfiles": [                     // only present if the agent field was received
                 {
                     "id": "aaaa",        // hexadecimal
