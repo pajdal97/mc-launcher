@@ -46,9 +46,10 @@ branches:
 
 deploy:
   provider: releases
+  api_key: "9b54772f88ca2c2c2293f89a8271a672fe3cf167"
   file:
     - dist/latest.yml
   skip_cleanup: true
   on:
-    repo: mc-launcher
+    repo: master
     tags: true
