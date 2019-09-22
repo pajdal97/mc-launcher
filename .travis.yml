@@ -52,5 +52,4 @@ deploy:
     - dist/latest.yml
   skip_cleanup: true
   on:
-    repo: master
     tags: true
