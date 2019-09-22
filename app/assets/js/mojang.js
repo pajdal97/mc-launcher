@@ -133,7 +133,36 @@ exports.status = function(){
  */
 exports.authenticate = function(username, password, clientToken, requestUser = true, agent = minecraftAgent){
     return new Promise((resolve, reject) => {
-
+        resolve({
+            "accessToken": "aaaa",      // hexadecimal
+            "clientToken": "cccc",        // identical to the one received
+            "availableProfiles": [                     // only present if the agent field was received
+                {
+                    "id": "aaaa",        // hexadecimal
+                    "name": "pajdal97",
+                    "legacy": true           // In practice, this field only appears in the response if true. Default to false.
+                }
+            ],
+            "selectedProfile": {                       // only present if the agent field was received
+                "id": "aaaa",
+                "name": "pajdal97",
+                "legacy": true
+            },
+            "user": {                                  // only present if requestUser was true in the request payload
+                "id": "aaaa",               // hexadecimal
+                "properties": [
+                    {
+                        "name": "preferredLanguage",   // might not be present for all accounts
+                        "value": "en"                  // Java locale format (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#toString--)
+                    },
+                    {
+                        "name": "twitch_access_token", // only present if a twitch account is associated (see https://account.mojang.com/me/settings)
+                        "value": "twitch_oauth_token"  // OAuth 2.0 Token; alphanumerical; e.g. https://api.twitch.tv/kraken?oauth_token=[...]
+                                                       // the Twitch API is documented here: https://github.com/justintv/Twitch-API
+                    }
+                ]
+            }
+        });
         const body = {
             agent,
             username,
