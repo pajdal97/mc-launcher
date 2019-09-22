@@ -46,10 +46,11 @@ branches:
 
 deploy:
   provider: releases
+  draft: true
   api_key:
     secure: $GH_TOKEN
   file:
-    - dist/latest.yml
+    - dist/*
   skip_cleanup: true
   on:
     tags: true
