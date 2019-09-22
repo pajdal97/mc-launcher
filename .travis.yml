@@ -46,7 +46,8 @@ branches:
 
 deploy:
   provider: releases
-  api_key: "9b54772f88ca2c2c2293f89a8271a672fe3cf167"
+  api_key:
+    secure: $GH_TOKEN
   file:
     - dist/latest.yml
   skip_cleanup: true
