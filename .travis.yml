@@ -50,5 +50,5 @@ deploy:
     - dist/latest.yml
   skip_cleanup: true
   on:
-    repo: /
+    repo: mc-launcher
     tags: true
