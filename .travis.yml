@@ -43,3 +43,12 @@ before_cache:
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
+
+deploy:
+  provider: releases
+  file:
+    - dist/latest.yml
+  skip_cleanup: true
+  on:
+    repo: /
+    tags: true
